@@ -56,7 +56,7 @@ connection.query('select * from galereya',function(error,result){
     });
 
     app.use(express.static(__dirname + '/public'));
-    app.use('/:page/:id?', express.static(__dirname + '/public'));
+
     app.use(bodyParser.urlencoded({encoded:true}));
     app.get('/about',function(req,res){
         res.render('about.jade',{
@@ -241,7 +241,7 @@ connection.query('select * from galereya',function(error,result){
         });
     });
 
-/*
+
     var array_pin = [];
     var array_dj =[];
 
@@ -278,7 +278,7 @@ connection.query('select * from galereya',function(error,result){
     });
 
     app.use('/sobitiya/pin-up/:id?', express.static(__dirname + '/public'));
-*/
+
     app.use('/:page', express.static(__dirname + '/public'));
     app.get('/:page?',function(req,res){
         var page = req.params.page, data;
