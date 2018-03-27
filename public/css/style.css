@@ -79,7 +79,7 @@ ul a{
   font-style: italic;
 }
 body{
-  background-image: url('images/background.jpg');
+  background-image: url('../images/background.jpg');
 }
 .with_border{
   border: 2px gray solid;
