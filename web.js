@@ -56,6 +56,7 @@ connection.query('select * from galereya',function(error,result){
     });
 
     app.use(express.static(__dirname + '/public'));
+    app.use('/:page/:id?', express.static(__dirname + '/public'));
     app.use(bodyParser.urlencoded({encoded:true}));
     app.get('/about',function(req,res){
         res.render('about.jade',{
@@ -231,7 +232,7 @@ connection.query('select * from galereya',function(error,result){
     });
 
 
-    app.use('/:page/:id?', express.static(__dirname + '/public'));
+
     app.get('/galereya/:id?',function(req,res){
         var id = req.params.id, foto_render;
         connection.query('select foto from galereya where(id_foto=("'+id+'"))',function(error,result){
@@ -239,7 +240,7 @@ connection.query('select * from galereya',function(error,result){
             res.render('foto.jade',foto_render);
         });
     });
-    app.use('/:page/:id?', express.static(__dirname + '/public'));
+
 /*
     var array_pin = [];
     var array_dj =[];
