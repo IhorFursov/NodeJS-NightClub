@@ -230,7 +230,7 @@ connection.query('select * from galereya',function(error,result){
         res.render('kontakti.jade',data);
     });
 
-    app.use('/galereya/101', express.static(__dirname + '/public'));
+
 
     app.get('/galereya/:id?',function(req,res){
         var id = req.params.id, foto_render;
@@ -239,7 +239,8 @@ connection.query('select * from galereya',function(error,result){
             res.render('foto.jade',foto_render);
         });
     });
-
+    app.use('/galereya/101', express.static(__dirname + '/public'));
+    
     var array_pin = [];
     var array_dj =[];
 
