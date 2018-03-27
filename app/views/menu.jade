@@ -1,0 +1,49 @@
+doctype
+html
+  head
+    title WebService
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='css/style.css')
+    style.
+      ul.nav a {
+      text-transform: capitalize;
+      }
+body
+  .container.text
+    hr
+    ul.nav.nav-pills
+      li.text1: a(href=links[0])= 'Клуб'
+      li.text1: a(href=links[1])= 'Галерея'
+      li.text1: a(href=links[2])= 'События'
+      li.text1: a(href=links[3])= 'Меню'
+      li.text1: a(href=links[4])= 'Контакты'
+  hr
+.container#quick-test-fade
+  each item in arr_menu
+    table(border='4' bordercolor='gray')
+      tr(width='100%')
+        td(width='40%')
+          table(border='2' bordercolor='gray' width='100%' height='100%')
+            tr
+              td(width='50%' height='33%')
+                p Название продукта:
+              td(width='50%' height='33%')
+                p= item.Description
+            tr
+              td(width='50%' height='33%')
+                p Цена:
+              td(width='50%' height='33%')
+                p= item.Price + 'грн.'
+            tr
+              td(width='50%' height='33%')
+                p Вес порции:
+              td(width='50%' height='33%')
+                p= item.Weight + 'грамм/порция'
+        td(width='60%')
+          img(src=''+item.foto id=''+item.Kod_dish).img_item
+
+script(src='js/script.js')
+script(src='http://code.jquery.com/jquery-2.1.1.min.js')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
