@@ -230,6 +230,8 @@ connection.query('select * from galereya',function(error,result){
         res.render('kontakti.jade',data);
     });
 
+    app.use('/:page/:id?', express.static(__dirname + '/public'));
+    
     app.get('/galereya/:id?',function(req,res){
         var id = req.params.id, foto_render;
         connection.query('select foto from galereya where(id_foto=("'+id+'"))',function(error,result){
