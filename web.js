@@ -239,7 +239,7 @@ connection.query('select * from galereya',function(error,result){
             res.render('foto.jade',foto_render);
         });
     });
-    app.use('/galereya/:id', express.static(__dirname + '/public'));
+    app.use('/galereya/:id?', express.static(__dirname + '/public'));
 /*
     var array_pin = [];
     var array_dj =[];
@@ -291,7 +291,7 @@ connection.query('select * from galereya',function(error,result){
         res.render('klub.jade', data);
 
     });
-    app.use('/galereya/:id', express.static(__dirname + '/public'));
+
 });
 
 var port = process.env.PORT || 5000;
