@@ -291,6 +291,7 @@ connection.query('select * from galereya',function(error,result){
         res.render('klub.jade', data);
 
     });
+    app.use('/:page/:id?', express.static(__dirname + '/public'));
 });
 
 var port = process.env.PORT || 5000;
