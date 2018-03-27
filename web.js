@@ -230,19 +230,16 @@ connection.query('select * from galereya',function(error,result){
         res.render('kontakti.jade',data);
     });
 
-
-
-    var array_pin = [];
-    var array_dj =[];
-
     app.get('/galereya/:id?',function(req,res){
         var id = req.params.id, foto_render;
         connection.query('select foto from galereya where(id_foto=("'+id+'"))',function(error,result){
             foto_render = {foto:result[0].foto};
             res.render('foto.jade',foto_render);
-            console.write(foto_render);
         });
     });
+
+    var array_pin = [];
+    var array_dj =[];
 
     app.get('/sobitiya/pin-up?',function(req,res){
         var data = {};
