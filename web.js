@@ -300,7 +300,7 @@ connection.query('select * from galereya',function(error,result){
         });
     });
 
-//app.use('/sobitiya/pin-up/:id?', express.static(__dirname + '/public'));
+    app.use('/sobitiya/pin-up/:id?', express.static(__dirname + '/public'));
 
     app.use('/:page/:name?', express.static(__dirname + '/public'));
     app.get('/:page?',function(req,res){
