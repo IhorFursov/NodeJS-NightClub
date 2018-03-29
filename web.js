@@ -23,7 +23,7 @@ setInterval(function () {
 var array_foto = [];
 var array_menu = [];
 
-app.use(express.static(__dirname + '/public'));
+//app.use(express.static(__dirname + '/public'));
 
 connection.query('select * from galereya',function(error,result){
     var array_foto = result;
