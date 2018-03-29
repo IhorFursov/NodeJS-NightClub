@@ -1,8 +1,32 @@
-var express = require("express");
+/*var express = require("express");
 var mysql = require("mysql");
 var app = express();
 app.use(express.logger());
 var bodyParser = require("body-parser");
+*/
+var express = require('express');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var methodOverride = require('method-override');
+var session = require('express-session');
+var bodyParser = require('body-parser');
+var errorHandler = require('errorhandler');
+
+
+
+
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
+app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(logger('dev'));
+app.use(methodOverride());
+app.use(session({ resave: true, saveUninitialized: true,
+    secret: 'uwotm8' }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 var fs = require('fs');
 var connection = mysql.createConnection({
     host:'us-cdbr-iron-east-05.cleardb.net',
