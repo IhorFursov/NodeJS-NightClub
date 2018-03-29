@@ -23,6 +23,8 @@ setInterval(function () {
 var array_foto = [];
 var array_menu = [];
 
+app.use(express.static(__dirname + '/public'));
+
 connection.query('select * from galereya',function(error,result){
     var array_foto = result;
 
@@ -56,7 +58,6 @@ connection.query('select * from galereya',function(error,result){
     });
 
     app.use(express.static(__dirname + '/public'));
-
     app.use(bodyParser.urlencoded({encoded:true}));
     app.get('/about',function(req,res){
         res.render('about.jade',{
@@ -231,8 +232,6 @@ connection.query('select * from galereya',function(error,result){
         res.render('kontakti.jade',data);
     });
 
-
-
     app.get('/galereya/:id?',function(req,res){
         var id = req.params.id, foto_render;
         connection.query('select foto from galereya where(id_foto=("'+id+'"))',function(error,result){
@@ -240,7 +239,6 @@ connection.query('select * from galereya',function(error,result){
             res.render('foto.jade',foto_render);
         });
     });
-
 
     var array_pin = [];
     var array_dj =[];
@@ -265,7 +263,7 @@ connection.query('select * from galereya',function(error,result){
         });
     });
 
-    app.use('/:page/:id?', express.static(__dirname + '/public'));
+//app.use('/:page/:id?', express.static(__dirname + '/public'));
 
     app.get('/sobitiya/pin-up/:id?',function(req,res){
         var data = {};
@@ -277,7 +275,7 @@ connection.query('select * from galereya',function(error,result){
         });
     });
 
-    app.use('/sobitiya/pin-up/:id?', express.static(__dirname + '/public'));
+//app.use('/sobitiya/pin-up/:id?', express.static(__dirname + '/public'));
 
     app.use('/:page', express.static(__dirname + '/public'));
     app.get('/:page?',function(req,res){
@@ -292,7 +290,6 @@ connection.query('select * from galereya',function(error,result){
         res.render('klub.jade', data);
 
     });
-
 });
 
 var port = process.env.PORT || 5000;
