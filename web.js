@@ -265,7 +265,7 @@ connection.query('select * from galereya',function(error,result){
         });
     });
 
-    app.use('/:page/:id?', express.static(__dirname + '/public'));
+    //app.use('/:page/:id?', express.static(__dirname + '/public'));
 
     app.get('/sobitiya/pin-up/:id?',function(req,res){
         var data = {};
@@ -279,7 +279,7 @@ connection.query('select * from galereya',function(error,result){
 
 //app.use('/sobitiya/pin-up/:id?', express.static(__dirname + '/public'));
 
-    //app.use('/:page', express.static(__dirname + '/public'));
+    app.use('/:page/:name?', express.static(__dirname + '/public'));
     app.get('/:page?',function(req,res){
         var page = req.params.page, data;
         if(!page) page = 'klub';
