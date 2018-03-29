@@ -1,8 +1,8 @@
 var express = require("express");
 var mysql = require("mysql");
-var logger = require('logger');
+//var logger = require('logger');
 var app = express();
-app.use(express.logger({stream: logFile}));
+//app.use(express.logger({stream: logFile}));
 var bodyParser = require("body-parser");
 
 /*
