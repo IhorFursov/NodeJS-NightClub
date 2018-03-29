@@ -7,10 +7,10 @@ var bodyParser = require("body-parser");
 var express = require('express');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var methodOverride = require('method-override');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var errorHandler = require('errorhandler');
+var path = require('path');
 
 
 
@@ -19,9 +19,6 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
-app.use(methodOverride());
-app.use(session({ resave: true, saveUninitialized: true,
-    secret: 'uwotm8' }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -36,7 +33,7 @@ var connection = mysql.createConnection({
     port: 3306 // required mysql
 });
 
-var path = require('path');
+
 process.env.PWD = process.cwd();
 
 connection.connect();
