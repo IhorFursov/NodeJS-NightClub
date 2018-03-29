@@ -1,9 +1,10 @@
-/*var express = require("express");
+var express = require("express");
 var mysql = require("mysql");
 var app = express();
 app.use(express.logger());
 var bodyParser = require("body-parser");
-*/
+
+/*
 var express = require('express');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -23,7 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+*/
 var fs = require('fs');
 var connection = mysql.createConnection({
     host:'us-cdbr-iron-east-05.cleardb.net',
