@@ -23,7 +23,7 @@ setInterval(function () {
 var array_foto = [];
 var array_menu = [];
 
-//app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 connection.query('select * from galereya',function(error,result){
     var array_foto = result;
@@ -279,7 +279,7 @@ connection.query('select * from galereya',function(error,result){
 
 //app.use('/sobitiya/pin-up/:id?', express.static(__dirname + '/public'));
 
-    app.use('/:page', express.static(__dirname + '/public'));
+    //app.use('/:page', express.static(__dirname + '/public'));
     app.get('/:page?',function(req,res){
         var page = req.params.page, data;
         if(!page) page = 'klub';
