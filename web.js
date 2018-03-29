@@ -57,7 +57,7 @@ connection.query('select * from galereya',function(error,result){
         next();
     });
 
-    //app.use(express.static(__dirname + '/public'));
+    app.use(express.static(__dirname + '/public'));
     app.use(bodyParser.urlencoded({encoded:true}));
     app.get('/about',function(req,res){
         res.render('about.jade',{
